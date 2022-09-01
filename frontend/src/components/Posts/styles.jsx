@@ -11,4 +11,12 @@ export default makeStyles((theme) => ({
   actionDiv: {
     textAlign: 'center',
   },
+  noPostsMessage: {
+    fontFamily: "Helvetica",
+    textAlign: 'center'
+  },
+  progressCircle: {
+    display: 'flex',
+    justifyContent: 'center'
+  }
 }))

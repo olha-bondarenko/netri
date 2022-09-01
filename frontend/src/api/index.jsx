@@ -1,21 +1,22 @@
 import axios from 'axios';
 
-const url = 'http://localhost:5000/api/posts';
+const API = axios.create({ baseURL: 'http://localhost:5000' });
 
-export const fetchPosts = () => axios.get(url);
+API.interceptors.request.use((req) => {
+  if (localStorage.getItem('profile')) {
+    req.headers.Authorization = `Bearer ${JSON.parse(localStorage.getItem('profile')).token}`;
+  }
+  return req;
+});
 
-export const createPost = (newPost) => {
-    return axios.post(url, newPost);
-}
+export const fetchPost = (id) => API.get(`/api/posts/${id}`);
+export const fetchPosts = (page) => API.get(`/api/posts?page=${page}`);
+export const fetchPostsBySearch = (searchQuery) => API.get(`/api/posts/search?searchQuery=${searchQuery.search || 'none'}&tags=${searchQuery.tags}`)
+export const createPost = (newPost) => API.post('/api/posts', newPost);
+export const likePost = (id) => API.patch(`/api/posts/${id}/likePost`);
+export const comment = (value, id) => API.post(`/api/posts/${id}/commentPost`, { value });
+export const updatePost = (id, updatedPost) => API.patch(`/api/posts/${id}`, updatedPost);
+export const deletePost = (id) => API.delete(`/api/posts/${id}`);
 
-export const updatePost = (id, updatePost) => {
-    return axios.patch(`${url}/${id}`, updatePost);
-}
-
-export const deletePost = (id) => {
-    return axios.delete(`${url}/${id}`);
-}
-
-export const likePost = (id) => {
-    return axios.patch(`${url}/${id}/likePost`);
-}
+export const signIn = (formData) => API.post('/api/user/signin', formData);
+export const signUp = (formData) => API.post('/api/user/signup', formData);
