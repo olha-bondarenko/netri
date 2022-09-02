@@ -7,6 +7,7 @@ import express from "express";
 import bodyParser from 'body-parser';
 import { dbConnect } from './src/configs/database';
 import postsRouter from './src/routers/posts'
+import userRouter from './src/routers/users'
 
 dbConnect();
 
@@ -20,6 +21,7 @@ app.use(cors({
 }));
 
 app.use("/api/posts", postsRouter);
+app.use("/api/user", userRouter);
 
 app.use(express.static('public'));
 
