@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { signin, signup } from '../controllers/users'
+import { signin, signup } from '../controllers/users';
 const router = Router();
 
 router.post('/signin', signin);
