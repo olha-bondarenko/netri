@@ -1,17 +1,13 @@
-import dotenv from 'dotenv';
-dotenv.config();
-// process.env.MONGO_URI
-// const cors = require('cors');
-import cors from 'cors'
-import express from "express";
-import bodyParser from 'body-parser';
+require("dotenv").config()
+const cors = require('cors');
+const express = require('express');
+const bodyParser = require('body-parser');
+const app = express();
 import { dbConnect } from './src/configs/database';
 import postsRouter from './src/routers/posts'
 import userRouter from './src/routers/users'
 
 dbConnect();
-
-const app = express();
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -24,6 +20,8 @@ app.use("/api/posts", postsRouter);
 app.use("/api/user", userRouter);
 
 app.use(express.static('public'));
+
+app.get
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => {

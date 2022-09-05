@@ -4,8 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node server.ts",
-    "build": "npm install && tsc"
+    "start": "nodem server.ts",
+    "build": "npm install && tsc",
+    "install-frontend": "cd frontend && npm install",
+    "heroku-postbuild": "npm run install-frontend && npm run build"
   },
   "keywords": [],
   "author": "",
