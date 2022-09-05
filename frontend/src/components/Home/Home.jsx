@@ -4,7 +4,6 @@ import ChipInput from 'material-ui-chip-input';
 import Posts from '../Posts/Posts';
 import Form from '../Form/Form';
 import { useDispatch } from 'react-redux';
-import { useSelector } from 'react-redux';
 import { getPostsBySearch } from '../../actions/posts';
 import Paginate from '../Pagination/Pagination'
 import { useNavigate, useLocation } from 'react-router-dom';
@@ -19,7 +18,6 @@ const Home = () => {
     const [ currentId, setCurrentId ] = useState(0);
     const [ search, setSearch ] = useState('');
     const [ tags, setTags ] = useState([]);
-    const { posts } = useSelector((state) => state.posts)
     const query = useQuery();
     const classes = useStyles();
     const dispatch = useDispatch();
