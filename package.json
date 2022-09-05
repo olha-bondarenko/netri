@@ -6,7 +6,7 @@
   "scripts": {
     "start": "nodem server.ts",
     "build": "npm install && tsc",
-    "install-frontend": "cd frontend && npm install",
+    "install-frontend": "cd frontend && npm install --force",
     "heroku-postbuild": "npm run install-frontend && npm run build"
   },
   "keywords": [],
