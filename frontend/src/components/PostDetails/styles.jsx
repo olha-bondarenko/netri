@@ -8,6 +8,10 @@ export default makeStyles((theme) => ({
     maxHeight: '600px',
 
   },
+  cardBase: {
+    padding: '50px 20px 20px', 
+    borderRadius: '15px'
+  },
   card: {
     display: 'flex',
     width: '100%',
@@ -31,7 +35,11 @@ export default makeStyles((theme) => ({
     display: 'flex',
     [theme.breakpoints.down('sm')]: {
       flexDirection: 'column',
-    },
+    }, 
+  },
+  recommendedPost: {
+    margin: '20px',
+    cursor: 'pointer'
   },
   loadingPaper: {
     display: 'flex',
@@ -41,13 +49,9 @@ export default makeStyles((theme) => ({
     borderRadius: '15px',
     height: '39vh',
   },
-  commentsOuterContainer: {
-    display: 'flex',
-    justifyContent: 'space-between',
-  },
-  commentsInnerContainer: {
-    height: '200px',
-    overflowY: 'auto',
-    marginRight: '30px',
-  },
+  recommendedPostImg: {
+    maxHeight: '200px',
+    objectFit: 'cover',
+    borderRadius: '10px'
+  }
 }));

@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from 'react'
-import { Container, Grow, Grid, Paper, AppBar, InputBase, Button } from '@material-ui/core';
+import React, { useState } from 'react'
+import { Container, Grow, Grid, Paper, InputBase, Button } from '@material-ui/core';
 import ChipInput from 'material-ui-chip-input';
 import Posts from '../Posts/Posts';
 import Form from '../Form/Form';
 import { useDispatch } from 'react-redux';
-import { getPosts, getPostsBySearch } from '../../actions/posts';
+import { useSelector } from 'react-redux';
+import { getPostsBySearch } from '../../actions/posts';
 import Paginate from '../Pagination/Pagination'
 import { useNavigate, useLocation } from 'react-router-dom';
 import useStyles from './styles';
@@ -18,6 +19,7 @@ const Home = () => {
     const [ currentId, setCurrentId ] = useState(0);
     const [ search, setSearch ] = useState('');
     const [ tags, setTags ] = useState([]);
+    const { posts } = useSelector((state) => state.posts)
     const query = useQuery();
     const classes = useStyles();
     const dispatch = useDispatch();
@@ -79,13 +81,13 @@ const Home = () => {
           <Button onClick={searchPost} className={classes.searchButton} color='primary' variant='contained'>Search</Button>
            </div>
            <Form currentId={currentId} setCurrentId={setCurrentId}/>
-           {( !searchQuery && !tags.length) && (
-            <Paper className={classes.pagination} elevation={6}>
-              <Paginate page={page} />
-            </Paper>
-           )}
          </Grid>
       </Grid>
+      {( !searchQuery && !tags.length) && (
+        <Paper className={classes.pagination} elevation={6}>
+          <Paginate page={page} />
+        </Paper>
+      )}
     </Container>
   </Grow>
   )

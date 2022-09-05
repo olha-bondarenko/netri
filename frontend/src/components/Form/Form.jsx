@@ -5,13 +5,13 @@ import useStyles from './styles';
 import { TextField, Button, Typography, Paper } from '@material-ui/core';
 import Filebase from 'react-file-base64';
 import { useDispatch } from 'react-redux';
-import { createPost, updatePost } from '../../actions/posts'
+import { createPost, updatePost } from '../../actions/posts';
 
 const Form = ({ currentId, setCurrentId }) => {
   const [postData, setPostData] = useState({
     title: '', message: '', tags: [], selectedFile: ''
   });
-  const post = useSelector((state) => currentId ? state.posts.find((p) => p._id === currentId) : null);
+  const post = useSelector((state) => currentId ? state.posts.posts.find((p) => p._id === currentId) : null);
   const classes = useStyles();
   const dispatch = useDispatch();
   const user = JSON.parse(localStorage.getItem('profile'));
@@ -38,7 +38,7 @@ const Form = ({ currentId, setCurrentId }) => {
     return (
       <Paper className={classes.paper}>
         <Typography variant='h6' align='center'>
-          Please Sign In to create your posts and comment other's.
+          Please Sign In to create your posts and like other's.
         </Typography>
       </Paper>
     )

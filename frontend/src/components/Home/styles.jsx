@@ -2,9 +2,15 @@ import { makeStyles } from '@material-ui/core/styles';
 
 export default makeStyles((theme) => ({
     pagination: {
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      width: '73%',
       borderRadius: 4,
       marginTop: '1rem',
       padding: '16px',
+      background: 'none',
+      boxShadow: 'none'
     },
     search: {
       position: 'relative',
