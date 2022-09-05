@@ -3,9 +3,9 @@ const cors = require('cors');
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
-import { dbConnect } from './src/configs/database';
-import postsRouter from './src/routers/posts'
-import userRouter from './src/routers/users'
+import { dbConnect } from './configs/database';
+import postsRouter from './routers/posts'
+import userRouter from './routers/users'
 
 dbConnect();
 
