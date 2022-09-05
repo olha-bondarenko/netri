@@ -21,9 +21,8 @@ app.use("/api/user", userRouter);
 
 app.use(express.static('public'));
 
-app.get
-
 const port = process.env.PORT || 5000;
-app.listen(port, () => {
+app.listen(port, err => {
+    if(err) throw err;
     console.log("Served on http://localhost:" + port);
 })
