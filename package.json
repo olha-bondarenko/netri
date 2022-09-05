@@ -4,11 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodem server.ts",
-    "build": "npm install && tsc",
-    "install-frontend": "cd frontend && npm install --force",
-    "heroku-postbuild": "npm run install-frontend && npm run build"
+    "start": "node server.js",
+    "build": "npm install && tsc"
   },
+  "type": "module",
   "keywords": [],
   "author": "",
   "license": "ISC",
