@@ -55,8 +55,7 @@ const Post = ({ post, setCurrentId }) => {
             name="test"
             className={classes.cardAction} 
             onClick={openPost}>
-            <CardMedia className={classes.media} title={post.title} />
-            {/* <CardMedia className={classes.media} image={post.selectedFile} title={post.title} /> */}
+            <CardMedia className={classes.media} image={post.selectedFile} title={post.title} />
                         {(user?.result?.googleId === post?.creator || user?.result?._id === post?.creator) && (
             <div className={classes.overlay2}>
               <Button style={{color: 'white'}} size='small' onClick={(e) => {

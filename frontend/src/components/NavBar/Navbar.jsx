@@ -27,7 +27,7 @@ const Navbar = () => {
     }, [location]);
     const logout = () => {
         dispatch ({type: actionType.LOGOUT });
-        navigate(0);
+        navigate('/');
         setUser(null);
     }
   return (

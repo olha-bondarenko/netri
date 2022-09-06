@@ -14,11 +14,11 @@ const App = () => {
        <Container maxWidth='xl'>
        <Navbar/>
        <Routes>
-         <Route path="/" element={<Navigate to="posts" />}/>
-         <Route path="/posts" element={<Home />}/>
-         <Route path="/posts/search" element={<Home />}/>
-         <Route path='/posts/:id' element={<PostDetails />}/>
-         <Route path='/signin' element={ !user ? <Auth /> : <Navigate to="/posts"/>}/>
+         <Route path="/" exact element={<Navigate to="posts" />}/>
+         <Route path="/posts" exact element={<Home />}/>
+         <Route path="/posts/search" exact element={<Home />}/>
+         <Route path='/posts/:id' exact element={<PostDetails />}/>
+         <Route path='/signin' exact element={ !user ? <Auth /> : <Navigate to="/posts"/>}/>
        </Routes>
       </Container>
     </Router>
