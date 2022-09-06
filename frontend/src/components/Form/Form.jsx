@@ -59,7 +59,7 @@ const Form = ({ currentId, setCurrentId }) => {
           onChange={(e) => setPostData({ ...postData, tags: e.target.value.split(',') })}
         />
         <div className={classes.fileInput}>
-          <Filebase type='file' multiple={false} onDone={({base64}) => setPostData({ ...postData, selectedFile: base64})}/>
+          {/* <Filebase type='file' multiple={false} onDone={({base64}) => setPostData({ ...postData, selectedFile: base64})}/> */}
         </div>
         <div className={classes.buttonSubmit}>
           <Button variant='contained' color='primary' size='large' type='submit'>
