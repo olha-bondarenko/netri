@@ -8,9 +8,9 @@ import PostDetails from './components/PostDetails/PostDetails';
 
 const App = () => {
   const user = JSON.parse(localStorage.getItem('profile'));
-
+  let hashHistory = Router.hashHistory;
   return (
-    <Router>
+    <Router history={hashHistory}>
        <Container maxWidth='xl'>
        <Navbar/>
        <Routes>
