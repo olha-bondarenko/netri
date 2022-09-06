@@ -18,7 +18,7 @@ app.use(cors());
 app.use("/api/posts", postsRouter);
 app.use("/api/user", userRouter);
 
-app.use(express.static(path.join(__dirname, 'frontend', 'build')))
+app.use(express.static('frontend/build'));
 
 app.get('*', (req: any, res: any) => {
     res.sendFile(path.join(__dirname, 'frontend/build', 'index.html'))
