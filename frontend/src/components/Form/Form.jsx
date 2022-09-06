@@ -3,7 +3,6 @@ import { useSelector } from 'react-redux';
 import './styles.jsx';
 import useStyles from './styles';
 import { TextField, Button, Typography, Paper } from '@material-ui/core';
-import Filebase from 'react-file-base64';
 import { useDispatch } from 'react-redux';
 import { createPost, updatePost } from '../../actions/posts';
 
