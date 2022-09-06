@@ -20,7 +20,7 @@ app.use("/api/user", userRouter);
 
 app.use(express.static('frontend/build'));
 
-app.get('/*', (req, res) => {
+app.get('*', (req: any, res: any) => {
     res.sendFile(path.join(__dirname, 'frontend/build', 'index.html'))
 })
 
