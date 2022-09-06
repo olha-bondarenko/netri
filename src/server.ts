@@ -3,6 +3,7 @@ const cors = require('cors');
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
+import path from 'path';
 import { dbConnect } from './configs/database';
 import postsRouter from './routers/posts'
 import userRouter from './routers/users'
@@ -18,6 +19,10 @@ app.use("/api/posts", postsRouter);
 app.use("/api/user", userRouter);
 
 app.use(express.static('frontend/build'));
+
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'frontend/build', 'index.html'))
+})
 
 const port = process.env.PORT || 5000;
 app.listen(port, err => {
