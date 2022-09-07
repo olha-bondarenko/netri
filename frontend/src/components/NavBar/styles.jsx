@@ -15,6 +15,9 @@ export default makeStyles((theme) => ({
     textDecoration: 'none',
     fontSize: '1.7rem',
     fontWeight: 300,
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '28px',
+    },
   },
   image: {
     marginLeft: '10px',
@@ -35,25 +38,35 @@ export default makeStyles((theme) => ({
     alignItems: 'center',
     [theme.breakpoints.down('sm')]: {
       width: 'auto',
-      marginTop: 20,
       justifyContent: 'center',
     },
   },
   logout: {
     marginLeft: '20px',
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '12px',
+      marginLeft: '10px'
+    },
   },
   userName: {
     display: 'flex',
     alignItems: 'center',
     textAlign: 'center',
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '12px',
+    },
   },
   brandContainer: {
     display: 'flex',
     alignItems: 'center',
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
+    [theme.breakpoints.down('sm')]: {
+      display: 'flex',
+    },
   },
   purple: {
     color: theme.palette.getContrastText(deepPurple[500]),
     backgroundColor: deepPurple[500],
+    marginRight: '10px'
   },
 }));

@@ -22,13 +22,14 @@ export default makeStyles((theme) => ({
   },
   section: {
     borderRadius: '20px',
-    margin: '10px',
+    margin: '10px 50px 10px 10px',
     flex: 1,
   },
   imageSection: {
     marginLeft: '20px',
     [theme.breakpoints.down('sm')]: {
       marginLeft: 0,
+      width: '40rem'
     },
   },
   recommendedPosts: {
@@ -50,8 +51,9 @@ export default makeStyles((theme) => ({
     height: '39vh',
   },
   recommendedPostImg: {
-    maxHeight: '200px',
+    minHeight: '200px',
     objectFit: 'cover',
-    borderRadius: '10px'
+    borderRadius: '10px',
+    width: '200px'
   }
 }));

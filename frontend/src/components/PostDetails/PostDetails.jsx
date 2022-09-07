@@ -54,9 +54,9 @@ const PostDetails = () => {
                     <Typography gutterBottom variant='h5'>You might also like:</Typography>
                     <Divider />
                     <div className={classes.recommendedPosts}>
-                        {recommendedPosts.map(({ title, name, selectedFile, _id }) => (
+                        {recommendedPosts.slice(0, 3).map(({ title, name, selectedFile, _id }) => (
                             <div className={classes.recommendedPost} key={_id} onClick={() => openPost(_id)}>
-                                <img className={classes.recommendedPostImg} src={selectedFile} width='200px'/>
+                                <img className={classes.recommendedPostImg} src={selectedFile}/>
                                 <Typography gutterBottom variant='h6'>{title}</Typography>
                                 <Typography gutterBottom variant='subtitle2'>{name}</Typography>
                             </div>
