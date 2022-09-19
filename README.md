@@ -1,6 +1,8 @@
 # Netri
 
-This project was created as a platform for people from all over the world to share their favorite hidden places in Ukraine. The main purpose of it is that users can upload pictures of their favorite places and write some additional information about it. Users are able to edit and delete their posts and to like/unlike own and other's posts. 
+This project was created as a platform for people from all over the world to share their favorite hidden places in Ukraine. 
+The main purpose of it is that users can upload pictures of their favorite places and write some additional information about it. 
+Users are able to edit and delete their posts and to like/unlike own and other's posts. 
 This app was made with React v18, Redux, Node.js, Express.js and styled with Material UI.
 
 
