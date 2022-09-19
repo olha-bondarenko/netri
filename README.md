@@ -8,7 +8,7 @@ This app was made with React v18, Redux, Node.js, Express.js and styled with Mat
 
 ## Development server
 
-Run `npm start` in the frontend directory to run client side and `npm start` in the backend directory to start a dev server. Navigate to `http://localhost:3000/` for cleind part and `http://localhost:5000/` for server side. The application will automatically reload if you change any of the source files. The live version of the app can be found <a href="https://netri-ua.herokuapp.com" target="_blank">here</a>.
+Run `npm install` and `npm start` in the frontend directory to run client side and `npm install` followed by `npm start` in the backend directory to start a dev server. Navigate to `http://localhost:3000/` for cleind part and `http://localhost:5000/` for server side. The application will automatically reload if you change any of the source files. The live version of the app can be found <a href="https://netri-ua.herokuapp.com" target="_blank">here</a>.
 
 ## Build
 
@@ -20,7 +20,7 @@ Unit tests will be added in the nearest future.
 
 ## Further steps
 
-- improve User Experience 
-- improve navigation within the app (add breadcrumbs for the single blogpost to navigate back to the list of posts)
+- improve pagination and posts listing
+- improve UX for the 'serach by tag' section
+- add unit tests
 - test for different browsers compatibility
-- make a research for more creative styling
